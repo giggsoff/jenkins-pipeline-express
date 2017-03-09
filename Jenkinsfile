@@ -5,28 +5,36 @@ pipeline {
     }
     stages{
 	    stage('Initialize') {
-		echo 'Initializing...'
-		def node = tool name: 'Node-7.4.0', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
-		env.PATH = "${node}/bin:${env.PATH}"
+		    steps{
+			echo 'Initializing...'
+		    }
 	    }
 
 	    stage('Checkout') {
-		echo 'Getting source code...'
-		checkout scm
+		    steps{
+			echo 'Getting source code...'
+			checkout scm
+		    }
 	    }
 
 	    stage('Build') {
-		echo 'Building dependencies...'
-		sh 'npm i'
+		    steps{
+			echo 'Building dependencies...'
+			sh 'npm i'
+		    }
 	    }
 
 	    stage('Test') {
-		echo 'Testing...'
-		sh 'npm test'
+		    steps{
+			echo 'Testing...'
+			sh 'npm test'
+		    }
 	    }
 
 	    stage('Publish') {
-		echo 'Publishing Test Coverage...'
+		    steps{
+			echo 'Publishing Test Coverage...'
+		    }
 	    }
      }
 }
