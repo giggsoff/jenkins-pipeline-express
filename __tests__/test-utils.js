@@ -77,7 +77,7 @@ describe("subtract two numbers", () => {
 // subtract
 describe("square number", () => {
   it("shoud be 2^2 = 4", () => {
-    expect(utils.sqr(2)).toBe(4);
+    expect(utils.sqr(2)).toBe(5);
   });
   it("shoud be (-2)^2 = 4", () => {
     expect(utils.sqr(-2)).toBe(4);
