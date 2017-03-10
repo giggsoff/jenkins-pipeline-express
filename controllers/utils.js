@@ -15,7 +15,7 @@ function subtract(a, b) {
 }
 
 function sqr(a){
-  return a*a*a;
+  return a*a;
 }
 
 module.exports = {
